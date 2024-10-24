@@ -1,0 +1,6 @@
+.numbers {
+    border: 2px solid grey;
+    min-width: 400px;
+    padding: 16px 8px;
+    border-radius: 16px;
+}

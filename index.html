@@ -2,8 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <link href="./index.css" rel="stylesheet"/>
     <script>
-        function add(inputString) {
+        function add() {
+            const getInputValue = document.getElementById('number-input').value;
+            console.log(getInputValue)
+            const inputString = getInputValue
             let delimiter = /[\n,]+/;
             if (inputString.startsWith("//")) {
                 const delimiterEndIndex = inputString.indexOf('\n');
@@ -17,12 +21,13 @@
                 return;
             }
             const sum = numberArray.reduce((sum, num) => sum + parseInt(num), 0);
-            
-            console.log(sum);
+            document.getElementById('value-output').innerHTML = "Total = " + sum;
         }
     </script>
   </head>
   <body>
-
+    <input placeholder="Enter the numbers to be added." class="numbers" id="number-input"/>
+    <button onclick="add()">Submit</button>
+    <p id="value-output"></p>
   </body>
   </html>
